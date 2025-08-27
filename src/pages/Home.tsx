@@ -3,31 +3,36 @@ import "../assets/css/Home.css";
 import img5 from "../assets/img/img_5.jpg";
 import img6 from "../assets/img/img_6.jpg";
 import img7 from "../assets/img/img_7.jpg";
-import {
-  mockDocuments,
-  mockTitles,
-  mockNavHeaders,
-  mockMarquees,
-  type NavHeader,
-} from "../mock/DocumentItem";
+import data from "../mock/DocumentItem.json";
 
+interface NavHeader {
+  id: string;
+  title: string;
+  color: string;
+  url: string;
+}
 
 export const Home = () => {
+  const { mockDocuments, mockTitles, mockNavHeaders, mockMarquees } = data;
+
   const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % mockNavHeaders.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [mockNavHeaders.length]);
 
   const active: NavHeader = mockNavHeaders[currentIndex];
 
   return (
     <div className="container-home">
       <div className="bg-home">
-
-        <div className="slider-wrapper" style={{ background: "#ccc", transition: "background 0.5s ease" }}>
+        <div
+          className="slider-wrapper"
+          style={{ background: "#ccc", transition: "background 0.5s ease" }}
+        >
           <div className="slider-container">
             <div style={{ height: "230px" }}>
               <img src={active.url} alt={active.title} className="slider-image" />
@@ -39,7 +44,11 @@ export const Home = () => {
                     <li
                       key={nav.id}
                       className="font-nav"
-                      style={{ background: nav.id === active.id ? active.color : "transparent", color: nav.id === active.id ? "#fff" : "#000" }}
+                      style={{
+                        background:
+                          nav.id === active.id ? active.color : "transparent",
+                        color: nav.id === active.id ? "#fff" : "#000",
+                      }}
                       onClick={() => setCurrentIndex(i)}
                     >
                       {nav.title}
@@ -48,41 +57,48 @@ export const Home = () => {
                 </ul>
               </div>
               <div style={{ width: "40%", overflow: "hidden" }}>
-
                 <div className="marquee">
                   <div className="marquee__content">
                     {mockMarquees.map((marquee, index) => (
-                      <a key={index} href={marquee.link} style={{ alignItems: "center", marginRight: "50px", }}>
-                       
-                        <span style={{ color: "#006699" }}> <i
-                          className={marquee.icon}
-                          style={{ color: "red", marginRight: "8px" }}
-                        ></i>{marquee.content}</span>
+                      <a
+                        key={index}
+                        href={marquee.link}
+                        style={{ alignItems: "center", marginRight: "50px" }}
+                      >
+                        <span style={{ color: "#006699" }}>
+                          <i
+                            className={marquee.icon}
+                            style={{ color: "red", marginRight: "8px" }}
+                          ></i>
+                          {marquee.content}
+                        </span>
                       </a>
                     ))}
 
+                    {/* Lặp lại để marquee cuộn mượt */}
                     {mockMarquees.map((marquee, index) => (
-                      <a key={`dup-${index}`} href={marquee.link} style={{ alignItems: "center", marginRight: "50px",  }}>
+                      <a
+                        key={`dup-${index}`}
+                        href={marquee.link}
+                        style={{ alignItems: "center", marginRight: "50px" }}
+                      >
                         <i
                           className={marquee.icon}
                           style={{ color: "red", marginRight: "8px" }}
                         ></i>
-                        <span style={{ color: "#006699" }}> <i
-                          className={marquee.icon}
-                          style={{ color: "red", marginRight: "8px" }}
-                        ></i>{marquee.content}</span>
+                        <span style={{ color: "#006699" }}>
+                          {marquee.content}
+                        </span>
                       </a>
                     ))}
                   </div>
                 </div>
-
-
               </div>
-
             </div>
           </div>
         </div>
 
+        {/* Content */}
         <div className="content">
           <div className="box-banner">
             <div className="box-banner-ad">
@@ -101,7 +117,6 @@ export const Home = () => {
               </a>
             </div>
           </div>
-
 
           <div className="content-box-news">
             <div className="box-news-home">
