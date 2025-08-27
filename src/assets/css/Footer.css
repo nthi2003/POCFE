@@ -1,0 +1,78 @@
+  #footer {
+    background-color: #9996A6;
+    padding: 15px 0;
+    width: 100%;
+    height: auto !important;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  #footer .content {
+    margin: 0 10px;
+    padding-top: 30px;
+    padding-bottom: 1px;
+  }
+
+  /* Simple footer layout */
+  .footer-simple {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: fit-content;
+    margin-left: 35vh;
+  }
+
+
+  /* Title styling */
+  .footer-title {
+    width: 100%;
+  }
+
+  .footer-title p {
+    color: #fff;
+    font-family: arial;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+
+  /* Certification section */
+  .footer-certification {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+  }
+
+  .cert-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .cert-container img {
+
+    width: 150px;
+  }
+
+
+
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .footer-simple {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .footer-title {
+      margin-bottom: 10px;
+    }
+    
+    .cert-container {
+      justify-content: center;
+    }
+  }

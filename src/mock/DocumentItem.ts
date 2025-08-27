@@ -1,3 +1,24 @@
+export interface Marquee {
+  id: string;
+  icon: string;  
+  content: string;
+  link: string;
+}
+
+export const mockMarquees: Marquee[] = [
+  { 
+    id: '1', 
+    icon: "fa-solid fa-star", 
+    content: "Thông cáo báo chí văn bản quy phạm pháp luật do Chính phủ, Thủ tướng Chính phủ ban hành trong tháng 8 năm 2021", 
+    link: "#" 
+  },
+  { 
+    id: '2', 
+    icon: "fa-solid fa-star", 
+    content: "Thông cáo báo chí văn bản quy phạm pháp luật do Chính phủ, Thủ tướng Chính phủ ban hành trong tháng 9 năm 2020", 
+    link: "#" 
+  }
+];
 export interface NavHeader {
   id: string;
   title: string;

@@ -1,0 +1,326 @@
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar-menu {
+  margin-bottom: 20px;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.sidebar-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background: #28a4e1;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  text-align: left;
+  cursor: pointer;
+  font: normal 14px Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.sidebar-btn:hover {
+  color: #cad8e5;
+}
+
+.sidebar-btn:hover .arrow-icon {
+  color: red;
+}
+
+.arrow-icon {
+  margin-right: 8px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.sidebar-banners img {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.box-title-news a {
+  font: bold 16px arial;
+}
+
+.sidebar-docs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-docs li {
+  margin-bottom: 8px;
+}
+
+.sidebar-docs a {
+  text-decoration: none;
+  color: #0072c6;
+  font-size: 14px;
+
+}
+
+.sidebar-docs a:hover {
+  text-decoration: none;
+}
+
+.content-news li a {
+  color: #006699;
+  font: 13px arial;
+  padding-bottom: 5px;
+  text-align: justify;
+  text-decoration: none;
+  width: 92%;
+  float: left;
+}
+
+.content-news li i {
+  color: #cad8e5;
+  float: none;
+  font-size: 13px;
+  padding-right: 10px;
+}
+
+.content-news li {
+  display: flex;
+}
+
+/* Dropdown styles */
+.list-diaphuong {
+  position: absolute;
+  left: 100%;
+  top: -15px;
+  border-radius: 4px;
+  min-width: 700px;
+  min-height: 400px;
+  z-index: 1000;
+  display: none;
+  padding: 0;
+}
+
+.dropdown-container {
+  width: 700px;
+  min-height: 400px;
+  position: relative;
+  padding: 20px;
+  background: url('../img/dropdown_chinhquyen_bg.png') no-repeat;
+  background-size: 740px 600px;
+  background-position: center;
+  border-radius: 4px;
+}
+
+/* Section styling */
+.dropdown-section {
+  width: 100%;
+  background: transparent;
+}
+
+/* Section title styling */
+.section-title {
+  background: #006675;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  padding: 10px 15px;
+  border-bottom: 1px solid #1a4a63;
+}
+
+/* Special styling for ministries section */
+.ministries-section {
+  background: transparent;
+}
+
+/* Grid layout for ministries */
+.ministries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-diaphuong ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.list-diaphuong li {
+  margin: 0;
+}
+
+.list-diaphuong li:last-child {
+  border-bottom: none;
+}
+
+/* Updated link styling for better spacing */
+.list-diaphuong a {
+  display: block;
+  padding: 8px 15px 8px 25px;
+  color: black;
+  text-decoration: none;
+  font-size: 13px;
+  transition: background-color 0.2s;
+  position: relative;
+}
+
+.list-diaphuong a::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #006675;
+  border-radius: 50%;
+}
+
+.list-diaphuong a:hover {
+  text-decoration: none;
+  color: red;
+}
+
+.list-diaphuong a:hover::before {
+  background-color: red;
+}
+
+/* Remove right border for last column items */
+.ministries-grid li:nth-child(3n) a {
+  border-right: none;
+}
+
+/* Hover effect for sidebar menu items */
+.sidebar-menu li:hover .list-diaphuong {
+  display: block !important;
+}
+
+/* Table layout for local law dropdown */
+.dropdown-container .title {
+  color: #006675;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-align: right;
+}
+
+.dropdown-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+
+.dropdown-container .header td {
+  background: rgba(0, 102, 117, 0.9);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px 15px;
+  text-align: center;
+}
+
+.dropdown-container table td {
+  vertical-align: top;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+}
+
+.dropdown-container table ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-container table li {
+  margin: 2px 0;
+}
+
+.dropdown-container table a {
+  display: block;
+  padding: 4px 8px 4px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+  border-radius: 2px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.dropdown-container table a::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: #006675;
+  border-radius: 50%;
+}
+
+.dropdown-container table a:hover {
+  color: red;
+}
+
+.dropdown-container table a:hover::before {
+  background-color: red;
+}
+
+.dropdown-container table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1px;
+  border-radius: 4px;
+}
+
+.dropdown-container .header td {
+  background: #006675;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 15px;
+  text-align: center;
+  border: none;
+}
+
+.dropdown-container table td {
+  vertical-align: top;
+  padding: 10px;
+}
+
+#div2 {
+
+  top: -65px;
+}
+
+
+
+/* Table layout for local law dropdown */
+.dropdown-container .title {
+  color: #006675;
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0 0 10px 0;
+  padding: 8px 15px;
+  border-radius: 4px;
+  text-align: center;
+}
