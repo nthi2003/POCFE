@@ -75,7 +75,6 @@ export const Home = () => {
                       </a>
                     ))}
 
-                    {/* Lặp lại để marquee cuộn mượt */}
                     {mockMarquees.map((marquee, index) => (
                       <a
                         key={`dup-${index}`}
@@ -98,7 +97,6 @@ export const Home = () => {
           </div>
         </div>
 
-        {/* Content */}
         <div className="content">
           <div className="box-banner">
             <div className="box-banner-ad">
@@ -127,7 +125,7 @@ export const Home = () => {
                   );
                   return (
                     <div key={title.id} className="box-title-news">
-                      <a href="#" style={{ color: title.color }}>
+                      <a href="#" style={{ color: title.color , fontSize: "18px" }}>
                         {title.text}
                       </a>
                       {docs.length > 0 && (
