@@ -2,7 +2,7 @@ import React from "react";
 import provincesData from "../../../mock/mockProvinces.json";
 
 const ProvincesDropdown: React.FC = () => {
-  const mockProvinces = provincesData.provinces; // Truy cập mảng provinces từ JSON
+  const mockProvinces = provincesData.provinces; 
 
   return (
     <li className="dropdown">
@@ -10,8 +10,10 @@ const ProvincesDropdown: React.FC = () => {
         ĐỊA PHƯƠNG ▾
       </a>
       <div className="dropdown-modal">
+        <div className="dropdown-menu-background">
+
         <div className="dropdown-modal-header">
-          DANH SÁCH CÁC TỈNH & THÀNH PHỐ TRỰC THUỘC TRUNG ƯƠNG
+            Danh sách các Tỉnh, Thành phố trực thuộc Trung ương
         </div>
         <div className="dropdown-modal-content">
           <div className="provinces-content">
@@ -34,6 +36,7 @@ const ProvincesDropdown: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </li>
