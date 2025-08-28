@@ -13,10 +13,10 @@ interface NavBarProps {
 }
 
 const defaultLeftMenuItems: MenuItem[] = [
-  { id: "1", label: "TRANG CHỦ", href: "#" },
-  { id: "2", label: "TÌM KIẾM", href: "#" },
-  { id: "3", label: "TIN TỨC", href: "#" },
-  { id: "4", label: "TÌNH HUỐNG PHÁP LUẬT", href: "#" },
+  { id: "1", label: "TRANG CHỦ", href: "/" },
+  { id: "2", label: "TÌM KIẾM", href: "/search" },
+  { id: "3", label: "TIN TỨC", href: "/new" },
+  { id: "4", label: "TÌNH HUỐNG PHÁP LUẬT", href: "law" },
   { id: "5", label: "ENGLISH", href: "#" },
 ];
 
