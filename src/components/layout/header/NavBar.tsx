@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SearchForm from "./SearchHeader";
 import MinistriesDropdown from "./MinistriesDropdown";
 import ProvincesDropdown from "./ProvincesDropdown";
@@ -40,9 +40,9 @@ const NavBar: React.FC<NavBarProps> = ({
         <ul className="navbar-left">
           {leftMenuItems.map((item) => (
             <li key={item.id || item.label}>
-              <a href={item.href} className="menu-item">
+              <Link to={item.href} className="menu-item">
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
