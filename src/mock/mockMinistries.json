@@ -1,0 +1,28 @@
+{
+  "ministries": [
+    { "id": "1", "name": "Bộ Công an", "url": "/bo-cong-an" },
+    { "id": "2", "name": "Bộ Quốc phòng", "url": "/bo-quoc-phong" },
+    { "id": "3", "name": "Kiểm toán Nhà nước", "url": "/kiem-toan-nha-nuoc" },
+    { "id": "4", "name": "Bộ Công thương", "url": "/bo-cong-thuong" },
+    { "id": "5", "name": "Bộ Tài chính", "url": "/bo-tai-chinh" },
+    { "id": "6", "name": "Tòa án nhân dân tối cao", "url": "/toaan-nhan-dan-toi-cao" },
+    { "id": "7", "name": "Bộ Giáo dục và Đào tạo", "url": "/bo-giao-duc-dao-tao" },
+    { "id": "8", "name": "Bộ Tài nguyên và Môi trường", "url": "/bo-tai-nguyen-va-moi-truong" },
+    { "id": "9", "name": "Viện kiểm sát nhân dân tối cao", "url": "/vien-kiem-sat-nhan-dan-toi-cao" },
+    { "id": "10", "name": "Bộ Giao thông vận tải", "url": "/bo-giao-thong-van-tai" },
+    { "id": "11", "name": "Bộ Thông tin và Truyền thông", "url": "/bo-thong-tin-va-truyen-thong" },
+    { "id": "12", "name": "Bộ Kế hoạch và Đầu tư", "url": "/bo-ke-hoach-va-dau-tu" },
+    { "id": "13", "name": "Bộ Văn hóa - Thể thao và Du lịch", "url": "/bo-van-hoa-the-thao-va-du-lich" },
+    { "id": "14", "name": "Bộ Khoa học và Công nghệ", "url": "/bo-khoa-hoc-va-cong-nghe" },
+    { "id": "15", "name": "Bộ Xây dựng", "url": "/bo-xay-dung" },
+    { "id": "16", "name": "Bộ Lao động - Thương Binh và Xã hội", "url": "/bo-lao-dong-thuong-binh-va-xa-hoi" },
+    { "id": "17", "name": "Bộ Y tế", "url": "/bo-y-te" },
+    { "id": "18", "name": "Bộ Nông nghiệp và Phát triển nông thôn", "url": "/bo-nong-nghiep-va-phat-trien-nong-thon" },
+    { "id": "19", "name": "Ngân hàng Nhà nước Việt Nam", "url": "/ngan-hang-nha-nuoc-viet-nam" },
+    { "id": "20", "name": "Bộ Nội vụ", "url": "/bo-noi-vu" },
+    { "id": "21", "name": "Thanh tra Chính phủ", "url": "/thanh-tra-chinh-phu" },
+    { "id": "22", "name": "Bộ Ngoại giao", "url": "/bo-ngoai-giao" },
+    { "id": "23", "name": "Ủy ban Dân tộc", "url": "/uy-ban-dan-toc" },
+    { "id": "24", "name": "Văn phòng Chính phủ", "url": "/van-phong-chinh-phu" }
+  ]
+}
