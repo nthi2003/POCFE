@@ -1,6 +1,5 @@
 import "../../assets/css/SearchBox.css";
 import { useEffect, useState, type FormEvent } from "react";
-
 import questionIcon from "../../assets/img/faq_question_icon.gif";
 import mockDocuments from "../../mock/searchbox-mockdata.json";
 
@@ -11,6 +10,7 @@ interface Document {
   issuedDate: string;
   effectiveDate: string;
   status: string;
+  expirationDate?: string;
 }
 
 const SearchBox: React.FC = () => {
@@ -18,27 +18,72 @@ const SearchBox: React.FC = () => {
   type SearchIn = "all" | "title" | "summary";
   type SortBy = "issuedDate";
   type SortOrder = "desc" | "asc";
+  type ActiveTab = "new" | "effective" | "expired";
+
+  // Default filter values
+  const DEFAULT_SEARCH_TYPE: SearchType = "allWords";
+  const DEFAULT_SEARCH_IN: SearchIn = "all";
+  const DEFAULT_SORT_BY: SortBy = "issuedDate";
+  const DEFAULT_SORT_ORDER: SortOrder = "desc";
+  const DEFAULT_TAB: ActiveTab = "new";
 
   const [keyword, setKeyword] = useState<string>("");
-  const [searchType, setSearchType] = useState<SearchType>("allWords");
-  const [searchIn, setSearchIn] = useState<SearchIn>("all");
+  const [searchType, setSearchType] = useState<SearchType>(DEFAULT_SEARCH_TYPE);
+  const [searchIn, setSearchIn] = useState<SearchIn>(DEFAULT_SEARCH_IN);
   const [fromDate, setFromDate] = useState<string>("");
   const [toDate, setToDate] = useState<string>("");
-  const [sortBy, setSortBy] = useState<SortBy>("issuedDate");
-  const [sortOrder, setSortOrder] = useState<SortOrder>("desc");
+  const [sortBy, setSortBy] = useState<SortBy>(DEFAULT_SORT_BY);
+  const [sortOrder, setSortOrder] = useState<SortOrder>(DEFAULT_SORT_ORDER);
   const [searchResults, setSearchResults] = useState<Document[]>([]);
+  const [isSearchPerformed, setIsSearchPerformed] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<ActiveTab>(DEFAULT_TAB);
+
+  const getCurrentMonthRange = () => {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+    return { startOfMonth, endOfMonth };
+  };
+
+  const isWithinLast30Days = (date: string) => {
+    const docDate = new Date(date);
+    const now = new Date();
+    const thirtyDaysAgo = new Date(now.setDate(now.getDate() - 30));
+    return docDate >= thirtyDaysAgo;
+  };
+
+  const filterByTab = (documents: Document[], tab: ActiveTab) => {
+    const { startOfMonth, endOfMonth } = getCurrentMonthRange();
+    return documents.filter((doc) => {
+      const effective =
+        doc.effectiveDate !== "Unknown" ? new Date(doc.effectiveDate) : null;
+      const expiration = doc.expirationDate
+        ? new Date(doc.expirationDate)
+        : null;
+
+      if (tab === "new") {
+        return isWithinLast30Days(doc.issuedDate);
+      } else if (tab === "effective") {
+        return (
+          effective && effective >= startOfMonth && effective <= endOfMonth
+        );
+      } else if (tab === "expired") {
+        return (
+          expiration && expiration >= startOfMonth && expiration <= endOfMonth
+        );
+      }
+      return true;
+    });
+  };
 
   useEffect(() => {
-    const filtered = (mockDocuments as Document[]).filter((doc) => {
-      // Filter theo ngày ban hành
-      const issued = new Date(doc.issuedDate);
-      const from = fromDate ? new Date(fromDate) : new Date(0);
-      const to = toDate ? new Date(toDate) : new Date();
-      return issued >= from && issued <= to;
-    });
+    let results = [...mockDocuments] as Document[];
 
-    // Sắp xếp kết quả
-    filtered.sort((a, b) => {
+    if (!isSearchPerformed) {
+      results = filterByTab(results, activeTab);
+    }
+
+    results.sort((a, b) => {
       if (sortBy === "issuedDate") {
         const dateA = new Date(a.issuedDate);
         const dateB = new Date(b.issuedDate);
@@ -49,11 +94,13 @@ const SearchBox: React.FC = () => {
       return 0;
     });
 
-    setSearchResults(filtered);
-  }, [fromDate, toDate, sortBy, sortOrder]);
+    setSearchResults(results);
+  }, [sortBy, sortOrder, isSearchPerformed, activeTab]);
 
+ 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSearchPerformed(true);
 
     const filtered = (mockDocuments as Document[]).filter((doc) => {
       const query = keyword.toLowerCase().trim();
@@ -98,7 +145,9 @@ const SearchBox: React.FC = () => {
       return matchesKeyword && matchesDate;
     });
 
-    filtered.sort((a, b) => {
+    const tabFiltered = filterByTab(filtered, activeTab);
+
+    tabFiltered.sort((a, b) => {
       if (sortBy === "issuedDate") {
         const dateA = new Date(a.issuedDate);
         const dateB = new Date(b.issuedDate);
@@ -109,7 +158,66 @@ const SearchBox: React.FC = () => {
       return 0;
     });
 
-    setSearchResults(filtered);
+    setSearchResults(tabFiltered);
+  };
+
+  const handleFilterChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+
+    // Update states based on input name
+    switch (name) {
+      case "keyword":
+        setKeyword(value);
+        break;
+      case "search-type":
+        setSearchType(value as SearchType);
+        break;
+      case "search-in":
+        setSearchIn(value as SearchIn);
+        break;
+      case "fromDate":
+        setFromDate(value);
+        break;
+      case "toDate":
+        setToDate(value);
+        break;
+      case "sortBy":
+        setSortBy(value as SortBy);
+        break;
+      case "sortOrder":
+        setSortOrder(value as SortOrder);
+        break;
+    }
+
+    // Reset to initial state if all filters are cleared
+    const isDefaultState =
+      (!value && name !== "keyword" && !keyword) ||
+      (name === "keyword" &&
+        value === "" &&
+        searchType === DEFAULT_SEARCH_TYPE &&
+        searchIn === DEFAULT_SEARCH_IN &&
+        !fromDate &&
+        !toDate &&
+        sortBy === DEFAULT_SORT_BY &&
+        sortOrder === DEFAULT_SORT_ORDER);
+
+    if (isDefaultState) {
+      setIsSearchPerformed(false);
+      setKeyword("");
+      setSearchType(DEFAULT_SEARCH_TYPE);
+      setSearchIn(DEFAULT_SEARCH_IN);
+      setFromDate("");
+      setToDate("");
+      setSortBy(DEFAULT_SORT_BY);
+      setSortOrder(DEFAULT_SORT_ORDER);
+    }
+  };
+
+  const handleTabChange = (tab: ActiveTab) => {
+    setActiveTab(tab);
+    setIsSearchPerformed(false);
   };
 
   return (
@@ -130,7 +238,8 @@ const SearchBox: React.FC = () => {
                   placeholder="Từ khóa tìm kiếm"
                   className="user-input"
                   value={keyword}
-                  onChange={(e) => setKeyword(e.target.value)}
+                  name="keyword"
+                  onChange={handleFilterChange}
                 />
               </div>
               <div className="search-opt">
@@ -139,7 +248,8 @@ const SearchBox: React.FC = () => {
                     type="radio"
                     name="search-type"
                     checked={searchType === "exact"}
-                    onChange={() => setSearchType("exact")}
+                    value="exact"
+                    onChange={handleFilterChange}
                   />
                   Chính xác cụm từ trên
                 </label>
@@ -148,7 +258,8 @@ const SearchBox: React.FC = () => {
                     type="radio"
                     name="search-type"
                     checked={searchType === "allWords"}
-                    onChange={() => setSearchType("allWords")}
+                    value="allWords"
+                    onChange={handleFilterChange}
                   />
                   Có tất cả từ trên
                 </label>
@@ -165,7 +276,8 @@ const SearchBox: React.FC = () => {
                   name="search-in"
                   className="radio"
                   checked={searchIn === "all"}
-                  onChange={() => setSearchIn("all")}
+                  value="all"
+                  onChange={handleFilterChange}
                 />
                 Tất cả
               </label>
@@ -175,7 +287,8 @@ const SearchBox: React.FC = () => {
                   name="search-in"
                   className="radio"
                   checked={searchIn === "title"}
-                  onChange={() => setSearchIn("title")}
+                  value="title"
+                  onChange={handleFilterChange}
                 />
                 Tiêu đề
               </label>
@@ -185,7 +298,8 @@ const SearchBox: React.FC = () => {
                   name="search-in"
                   className="radio"
                   checked={searchIn === "summary"}
-                  onChange={() => setSearchIn("summary")}
+                  value="summary"
+                  onChange={handleFilterChange}
                 />
                 Trích yếu
               </label>
@@ -199,7 +313,8 @@ const SearchBox: React.FC = () => {
               <input
                 type="date"
                 value={fromDate}
-                onChange={(e) => setFromDate(e.target.value)}
+                name="fromDate"
+                onChange={handleFilterChange}
               />
             </div>
             <div className="searchDate-input">
@@ -207,17 +322,15 @@ const SearchBox: React.FC = () => {
               <input
                 type="date"
                 value={toDate}
-                onChange={(e) => setToDate(e.target.value)}
+                name="toDate"
+                onChange={handleFilterChange}
               />
             </div>
           </div>
 
           <div className="short-option">
             <span>Sắp xếp theo</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortBy)}
-            >
+            <select value={sortBy} name="sortBy" onChange={handleFilterChange}>
               <option value="issuedDate">Ngày ban hành</option>
               <option>Loại văn bản</option>
               <option>Kết quả chính xác</option>
@@ -226,14 +339,15 @@ const SearchBox: React.FC = () => {
             </select>
             <select
               value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value as SortOrder)}
+              name="sortOrder"
+              onChange={handleFilterChange}
             >
               <option value="desc">Mới đến cũ</option>
               <option value="asc">Cũ đến mới</option>
             </select>
             <button type="submit">Tìm kiếm</button>
             <div className="tooltip-container">
-              <img className="question-icon" src={questionIcon}></img>
+              <img className="question-icon" src={questionIcon} />
               <div className="tooltip-content">
                 <h5>Cách thức tìm kiếm</h5>
                 <div className="tooltip-text">
@@ -268,49 +382,101 @@ const SearchBox: React.FC = () => {
           </div>
         </div>
       </form>
-      <div className="listLawSection">
-        {searchResults.length > 0 && (
-          <div className="search-results">
-            <ul className="listLaw">
-              {searchResults.map((doc) => (
-                <li key={doc.id} className="lawItem">
-                  <p className="law-title">
-                    <a href="#">{doc.title}</a>
-                  </p>
-                  <div className="law-content">
-                    <div className="left">
-                      <p>{doc.summary}</p>
-                      <div className="link">
-                        <a href="#" className="opt opt1">Bản PDF</a>
-                        <a href="#" className="opt opt2">VB liên quan</a>
-                        <a href="#" className="opt opt3">Thuộc tính </a>
-                        <a href="#" className="opt opt4">Lược đồ</a>
-                        <a href="#" className="opt opt5">Tải về </a>
+
+      {searchResults.length > 0 && (
+        <>
+          {isSearchPerformed ? (
+            <div className="search-result-tab tab">
+              <div className="search-result-content tab-content">
+                Kết quả tìm kiếm:{" "}
+                <span className="search-result-value">
+                  Tìm thấy {searchResults.length} văn bản
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div className="navigation-container">
+              <button
+                className={`nav-button ${activeTab === "new" ? "active" : ""}`}
+                onClick={() => handleTabChange("new")}
+              >
+                Văn bản mới
+              </button>
+              <button
+                className={`nav-button ${
+                  activeTab === "effective" ? "active" : ""
+                }`}
+                onClick={() => handleTabChange("effective")}
+              >
+                Văn bản có hiệu lực trong tháng
+              </button>
+              <button
+                className={`nav-button ${
+                  activeTab === "expired" ? "active" : ""
+                }`}
+                onClick={() => handleTabChange("expired")}
+              >
+                Văn bản hết hiệu lực trong tháng
+              </button>
+            </div>
+          )}
+
+          <div className="listLawSection">
+            <div className="pagnition">
+              <div className="pagnition-wrapper"></div>
+            </div>
+            <div className="search-results">
+              <ul className="listLaw">
+                {searchResults.map((doc) => (
+                  <li key={doc.id} className="lawItem">
+                    <p className="law-title">
+                      <a href="#">{doc.title}</a>
+                    </p>
+                    <div className="law-content">
+                      <div className="left">
+                        <p>{doc.summary}</p>
+                        <div className="link">
+                          <a href="#" className="opt opt1">
+                            Bản PDF
+                          </a>
+                          <a href="#" className="opt opt2">
+                            VB liên quan
+                          </a>
+                          <a href="#" className="opt opt3">
+                            Thuộc tính
+                          </a>
+                          <a href="#" className="opt opt4">
+                            Lược đồ
+                          </a>
+                          <a href="#" className="opt opt5">
+                            Tải về
+                          </a>
+                        </div>
+                      </div>
+                      <div className="right">
+                        <p className="right-item">
+                          <span className="regular">Ban hành: </span>
+                          <span className="regular">{doc.issuedDate}</span>
+                        </p>
+                        <p className="right-item">
+                          <span className="regular">Hiệu lực:</span>
+                          <span className="regular">{doc.effectiveDate}</span>
+                        </p>
+                        <p className="right-item">
+                          <span className="law-status">Trạng thái:</span>
+                          <span className="law-status">
+                            {doc.status || "Đang hiệu lực"}
+                          </span>
+                        </p>
                       </div>
                     </div>
-                    <div className="right">
-                      <p className="right-item">
-                        <span className="regular">Ban hành: </span>
-                        <span className="regular">{doc.issuedDate}</span>
-                      </p>
-                      <p className="right-item">
-                        <span className="regular">Hiệu lực:</span>
-                        <span className="regular">{doc.effectiveDate}</span>
-                      </p>
-                      <p className="right-item">
-                        <span className="law-status">Trạng thái:</span>
-                        <span className="law-status">
-                          {doc.status || "Đang hiệu lực"}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        )}
-      </div>
+        </>
+      )}
     </>
   );
 };

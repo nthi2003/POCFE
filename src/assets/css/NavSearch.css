@@ -26,14 +26,20 @@
   padding-left: 17px;
 }
 .top-nav-item a {
-  font-size: 13px;
+  font-size: 9pt;
   flex-shrink: 0;
 }
 .hightlight:hover {
   color: #f9651f;
+  cursor: pointer;
   text-decoration: none;
 }
 
+.mid-hightlight:hover {
+  color: #bb4007;
+  cursor: pointer;
+  text-decoration: none;
+}
 .label {
   font-size: 14px;
   color: white;
@@ -63,7 +69,7 @@
   background: url("../img/arrBox03.gif") no-repeat 2px 7px;
   padding-left: 18px;
 }
-.nav-footer {
+.nav-footer-content {
   background-image: url("../img/content-01-footer.gif");
   background-repeat: no-repeat;
   height: 12px;

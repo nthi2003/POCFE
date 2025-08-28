@@ -1,14 +1,14 @@
 .search-section {
   background-image: url("../img/box-search.gif");
   background-position: bottom;
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-size: cover;
 
   border-radius: 8px;
-  padding: 15px 20px;
+  padding: 12px 20px;
   font-family: Arial, sans-serif;
   font-size: 13px;
-  max-width: 580px;
+  min-width: 540px;
   position: relative;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   padding-bottom: 5px;
 }
 .search-header h4 {
@@ -58,7 +58,6 @@
 .search-filter-ratio > span,
 .search-filter-date > span,
 .short-option > span {
-  font-weight: bold;
   color: #2c3e50;
   min-width: 120px;
   flex-shrink: 0;
@@ -169,7 +168,6 @@
   margin-left: 5px;
 }
 
-
 .flex {
   display: flex;
 }
@@ -215,31 +213,14 @@
   color: #d35400;
 }
 
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-  margin-left: 8px;
-}
-
-.question-icon {
-  font-size: 18px;
-  cursor: help;
-  color: #e67e22;
-  transition: color 0.2s ease;
-}
-
-.question-icon:hover {
-  color: #d35400;
-}
-
 .tooltip-content {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 100%; /* ngay dưới icon */
-  left: 100%; /* ngay bên phải icon */
-  margin-left: 8px; /* khoảng cách từ icon */
-  margin-top: 4px; /* khoảng cách từ icon */
+  top: 100%;
+  left: 100%;
+  margin-left: 8px;
+  margin-top: 4px;
   background: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 6px;
@@ -280,15 +261,15 @@
   font-weight: bold;
 }
 
-/* Arrow pointer for tooltip (left side pointing to icon) */
+/* Arrow pointer for tooltip (right side, pointing to icon) */
 .tooltip-content::before {
   content: "";
   position: absolute;
-  top: 10px; /* mũi tên lệch theo chiều dọc */
-  left: -8px; /* đặt bên trái tooltip */
+  top: 10px;
+  left: -8px;
   border-width: 8px;
   border-style: solid;
-  border-color: transparent #f8f9fa transparent transparent; /* chỉ màu phía bên phải */
+  border-color: transparent #f8f9fa transparent transparent;
   z-index: 1001;
   display: block;
   width: 0;
@@ -302,17 +283,40 @@
   left: -10px;
   border-width: 9px;
   border-style: solid;
-  border-color: transparent #dee2e6 transparent transparent; /* border shadow */
+  border-color: transparent #dee2e6 transparent transparent;
   z-index: 1000;
 }
 
+/* Media query for screens <= 1440px */
+@media screen and (max-width: 1440px) {
+  .tooltip-content {
+    left: auto;
+    right: 100%;
+    margin-left: 0;
+    margin-right: 8px;
+    width: 400px; /* Reduced width for smaller screens */
+  }
+
+  /* Arrow pointer for tooltip (left side, pointing to icon) */
+  .tooltip-content::before {
+    left: auto;
+    right: -8px;
+    border-color: transparent transparent transparent #f8f9fa;
+  }
+
+  .tooltip-content::after {
+    left: auto;
+    right: -10px;
+    border-color: transparent transparent transparent #dee2e6;
+  }
+}
 .listLawSection {
   border: 1px solid #cbcbcb;
   box-sizing: border-box;
-  padding: 15px 20px;
+  padding: 15px 12px;
   font-family: Arial, sans-serif;
   font-size: 13px;
-  max-width: 580px;
+  min-width: 540px;
   position: relative;
 }
 .listLaw {
@@ -358,7 +362,6 @@
   padding-right: 1%;
 }
 .left p {
-  /* padding-top: 12px; */
   padding: 5px 0px;
   text-align: justify;
   font: normal 10pt Arial, Helvetica, sans-serif;
@@ -427,4 +430,88 @@
 }
 .law-status {
   color: red;
+}
+
+.search-result-tab {
+  width: 46%;
+  background-image: url("../img/tab-bg-hover.gif");
+  background-repeat: no-repeat;
+  margin-bottom: 6px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.search-result-content {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  color: white;
+  font-size: 10pt;
+}
+.search-result-value {
+  color: #f8e284;
+  font-weight: bold;
+}
+
+.pagnition {
+  width: 100%;
+  display: flex;
+}
+
+.navigation-container {
+  display: flex;
+  gap: 0;
+  max-width: 800px;
+  margin-bottom: 6px;
+}
+
+.nav-button {
+  background-color: #6b7280;
+  color: white;
+  padding: 8px;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  border-right: 1px solid #4b5563;
+}
+
+.nav-button.active {
+  background-color: #374151;
+  font-weight: 700;
+}
+
+.nav-button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.nav-button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right: none;
+}
+
+.nav-button:hover {
+  background-color: #374151;
+}
+
+.nav-button:active {
+  background-color: #374151;
+}
+
+.link a:hover {
+  color: rgb(163, 17, 17);
+}
+
+.scroll-to-top {
+  position: absolute;
+  right: 1%;
+  font-size: 14px;
+  padding: 8px 14px;
+  background-color: rgb(52, 187, 250);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
