@@ -1,5 +1,5 @@
 .search-section {
-  background-image: url("../assets/img//box-search.gif");
+  background-image: url("../img/box-search.gif");
   background-position: bottom;
   background-repeat: none;
   background-size: cover;
@@ -169,7 +169,7 @@
   margin-left: 5px;
 }
 
-/* Remove unused classes and clean up */
+
 .flex {
   display: flex;
 }
@@ -198,7 +198,6 @@
   align-items: centers;
 }
 
-/* Added tooltip container and styling for hover functionality */
 .tooltip-container {
   position: relative;
   display: inline-block;
@@ -330,7 +329,7 @@
 }
 .law-title {
   padding: 5px 0 5px 18px;
-  background: url("../assets/img/arrBox02.gif") no-repeat 5px 8px #f1f1f1;
+  background: url("../img/arrBox02.gif") no-repeat 5px 8px #f1f1f1;
   text-align: justify;
   border: 1px solid #dedede;
 }
@@ -379,25 +378,25 @@
   display: inline-block;
 }
 .opt1 {
-  background-image: url("../assets/img/icon-source.gif");
+  background-image: url("../img/icon-source.gif");
   background-position: 0px 6px;
 }
 .opt2 {
-  background-image: url("../assets/img/icon-ref.gif");
+  background-image: url("../img/icon-ref.gif");
   background-position: 0px 7px;
   padding-left: 15px;
 }
 .opt3 {
-  background-image: url("../assets/img/icon-tabvb.png");
+  background-image: url("../img/icon-tabvb.png");
   background-position: -2px -17px;
   padding-left: 15px;
 }
 .opt4 {
-  background-image: url("../assets/img/icon-map.gif");
+  background-image: url("../img/icon-map.gif");
   background-position: 0px 7px;
 }
 .opt5 {
-  background-image: url("../assets/img/icon-download.gif");
+  background-image: url("../img/icon-download.gif");
   background-position: 0px 7px;
   padding-right: 0;
 }

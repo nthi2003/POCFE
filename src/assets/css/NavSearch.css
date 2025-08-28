@@ -8,7 +8,7 @@
 }
 
 .top {
-  background-image: url("../assets/img/bg-nav-left.png");
+  background-image: url("../img/bg-nav-left.png");
   background-color: #0273a6;
   color: white;
 }
@@ -21,7 +21,7 @@
 }
 .top-nav-item span {
   display: block;
-  background-image: url("../assets/img/left-menu-item-bg.png");
+  background-image: url("../img/left-menu-item-bg.png");
   background-repeat: no-repeat;
   padding-left: 17px;
 }
@@ -38,7 +38,7 @@
   font-size: 14px;
   color: white;
   padding: 21px 5px 16px 0;
-  background-image: url("../assets/img/nav-header.gif");
+  background-image: url("../img/nav-header.gif");
   background-repeat: no-repeat;
 }
 .label span:hover {
@@ -60,11 +60,11 @@
   display: block;
   border-bottom: 1px solid #eee;
   padding: 6px 0px;
-  background: url("../assets/img/arrBox03.gif") no-repeat 2px 7px;
+  background: url("../img/arrBox03.gif") no-repeat 2px 7px;
   padding-left: 18px;
 }
 .nav-footer {
-  background-image: url("../assets/img/content-01-footer.gif");
+  background-image: url("../img/content-01-footer.gif");
   background-repeat: no-repeat;
   height: 12px;
   line-height: 12px;
