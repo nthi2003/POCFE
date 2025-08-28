@@ -6,7 +6,7 @@ interface BannerProps {
   subtitle?: string;
 }
 
-const Banner: React.FC<BannerProps> = ({ bannerTitle, bgBanner, subtitle = "Trung ương" }) => {
+const Banner: React.FC<BannerProps> = ({ bannerTitle, bgBanner }) => {
   return (
     <div
       className="banner"
@@ -15,7 +15,6 @@ const Banner: React.FC<BannerProps> = ({ bannerTitle, bgBanner, subtitle = "Trun
       }}
     >
       <img src={bannerTitle} alt="Banner Title" className="banner-title" />
-      <p className="banner-subtitle">{subtitle}</p>
     </div>
   );
 };

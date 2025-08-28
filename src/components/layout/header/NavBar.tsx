@@ -14,10 +14,10 @@ interface NavBarProps {
 }
 
 const defaultLeftMenuItems: MenuItem[] = [
-  { id: "1", label: "CSDL QUỐC GIA", href: "#" },
-  { id: "2", label: "TRANG CHỦ", href: "#" },
-  { id: "3", label: "TÌM KIẾM", href: "#" },
-  { id: "4", label: "ENGLISH", href: "#" }
+  { id: "1", label: "TRANG CHỦ", href: "/" },
+  { id: "2", label: "TÌM KIẾM", href: "/search" },
+  { id: "3", label: "TIN TỨC", href: "new" },
+  { id: "4", label: "TÌNH HUỐNG PHÁP LUẬT", href: "law" }
 ];
 
 const defaultRightMenuItems: MenuItem[] = [
