@@ -1,6 +1,4 @@
 import React from "react";
-import MinistriesDropdown from "./MinistriesDropdown";
-import ProvincesDropdown from "./ProvincesDropdown";
 import SearchForm from "./SearchHeader";
 
 interface MenuItem {
@@ -22,13 +20,8 @@ const defaultLeftMenuItems: MenuItem[] = [
   { id: "5", label: "ENGLISH", href: "#" },
 ];
 
-const defaultRightMenuItems: MenuItem[] = [
-  { id: "6", label: "TRUNG ƯƠNG", href: "#" },
-];
-
 const NavBar: React.FC<NavBarProps> = ({
   leftMenuItems = defaultLeftMenuItems,
-  rightMenuItems = defaultRightMenuItems,
 }) => {
   return (
     <nav className="navbar">
@@ -42,7 +35,7 @@ const NavBar: React.FC<NavBarProps> = ({
             </li>
           ))}
         </ul>
-        <SearchForm/>
+        <SearchForm />
       </div>
     </nav>
   );
