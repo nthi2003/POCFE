@@ -1,14 +1,12 @@
 import './App.css'
-import Footer from './components/layout/Footer'
-import { Home } from './pages/Home'
+import LawSituation from './pages/LawSituation'
 function App() {
 
   return (
     <>
       <div>
           <div className="bg-app">
-              <Home />
-              <Footer/>
+            <LawSituation/>
           </div>
       </div>
     </>
