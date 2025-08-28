@@ -1,7 +1,19 @@
 .bg-app {
   min-height: 100vh;
-  min-width: 100vw;
-  width: 100%;
+  width: calc(100vw - 15px);
   background: #f2f2f2 url('./assets/img/bg-home.gif') no-repeat top center;
   background-size: 100% auto;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex: 1 0 auto;
 }

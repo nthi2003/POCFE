@@ -28,6 +28,7 @@ export const Home = () => {
 
   return (
     <div className="container-home">
+
       <div className="bg-home">
         <div
           className="slider-wrapper"
