@@ -1,122 +1,253 @@
 [
   {
-    "id": "180553",
-    "title": "Nghị định 95/2025/NĐ-CP",
-    "summary": "Quy định chi tiết một số điều của Luật Thuế giá trị gia tăng, Luật Thuế tiêu thụ đặc biệt, Luật Thuế thu nhập doanh nghiệp, Luật Thuế thu nhập cá nhân",
-    "issuedDate": "2025-08-08",
+    "id": "200001",
+    "title": "Nghị định 101/2025/NĐ-CP",
+    "summary": "Quy định chi tiết Luật Bảo vệ môi trường",
+    "issuedDate": "2025-08-25",
+    "effectiveDate": "2025-09-01",
+    "status": "Chưa có hiệu lực"
+  },
+  {
+    "id": "200002",
+    "title": "Thông tư 15/2025/TT-BGTVT",
+    "summary": "Hướng dẫn quản lý vận tải đường bộ",
+    "issuedDate": "2025-08-20",
+    "effectiveDate": "2025-09-15",
+    "status": "Chưa có hiệu lực"
+  },
+  {
+    "id": "200003",
+    "title": "Quyết định 1234/2025/QĐ-BTC",
+    "summary": "Ban hành kế hoạch tài chính công 2025",
+    "issuedDate": "2025-08-15",
+    "effectiveDate": "2025-08-20",
+    "status": "Đang hiệu lực"
+  },
+  {
+    "id": "200004",
+    "title": "Nghị định 102/2025/NĐ-CP",
+    "summary": "Quy định về an ninh mạng",
+    "issuedDate": "2025-08-10",
+    "effectiveDate": "2025-09-10",
+    "status": "Chưa có hiệu lực"
+  },
+  {
+    "id": "200005",
+    "title": "Thông tư 16/2025/TT-BYT",
+    "summary": "Quy định kiểm tra an toàn thực phẩm",
+    "issuedDate": "2025-08-05",
     "effectiveDate": "2025-08-15",
-    "status": ""
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "180552",
-    "title": "Nghị định 222/2025/NĐ-CP",
-    "summary": "Nghị định quy định việc dạy và học bằng tiếng nước ngoài trong cơ sở giáo dục đại học",
-    "issuedDate": "2025-08-08",
-    "effectiveDate": "2025-09-25",
+    "id": "200006",
+    "title": "Luật 75/2025/QH15",
+    "summary": "Luật Giáo dục nghề nghiệp",
+    "issuedDate": "2025-08-01",
+    "effectiveDate": "2025-09-01",
     "status": "Chưa có hiệu lực"
   },
   {
-    "id": "180818",
-    "title": "Thông tư 14/2025/TT-BKHCN",
-    "summary": "Quy định việc tổ chức và đảm bảo thông tin liên lạc phục vụ công tác chỉ đạo, điều hành phòng, chống thiên tai",
-    "issuedDate": "2025-08-08",
-    "effectiveDate": "2025-09-22",
+    "id": "200007",
+    "title": "Nghị định 103/2025/NĐ-CP",
+    "summary": "Quy định về quản lý đất đai",
+    "issuedDate": "2025-07-31",
+    "effectiveDate": "2025-08-10",
+    "status": "Đang hiệu lực"
+  },
+  {
+    "id": "200008",
+    "title": "Thông tư 17/2025/TT-BKHCN",
+    "summary": "Quy định về nghiên cứu khoa học",
+    "issuedDate": "2025-07-30",
+    "effectiveDate": "2025-08-05",
+    "status": "Đang hiệu lực"
+  },
+  {
+    "id": "200009",
+    "title": "Quyết định 5678/2025/QĐ-BGDĐT",
+    "summary": "Ban hành chương trình giáo dục phổ thông",
+    "issuedDate": "2025-08-12",
+    "effectiveDate": "2025-09-01",
     "status": "Chưa có hiệu lực"
   },
   {
-    "id": "118230",
-    "title": "Thông tư 39/2016/TT-NHNN",
-    "summary": "Quy định về hoạt động tín dụng của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
-    "issuedDate": "2016-12-30",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200010",
+    "title": "Nghị định 104/2025/NĐ-CP",
+    "summary": "Quy định về phát triển công nghiệp",
+    "issuedDate": "2025-08-18",
+    "effectiveDate": "2025-09-05",
+    "status": "Chưa có hiệu lực"
+  },
+
+  {
+    "id": "200011",
+    "title": "Nghị định 105/2025/NĐ-CP",
+    "summary": "Quy định chi tiết Luật Thuế xuất nhập khẩu",
+    "issuedDate": "2025-07-15",
+    "effectiveDate": "2025-08-01",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "46744",
-    "title": "Luật 58/2014/QH13",
-    "summary": "Luật Hôn nhân và Gia đình",
-    "issuedDate": "2014-06-19",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200012",
+    "title": "Thông tư 18/2025/TT-BTC",
+    "summary": "Hướng dẫn quản lý ngân sách nhà nước",
+    "issuedDate": "2025-07-10",
+    "effectiveDate": "2025-08-05",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "119683",
-    "title": "Nghị định 01/2017/NĐ-CP",
-    "summary": "Sửa đổi, bổ sung một số nghị định quy định chi tiết thi hành Luật đất đai",
-    "issuedDate": "2017-01-03",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200013",
+    "title": "Luật 76/2025/QH15",
+    "summary": "Luật Bảo hiểm xã hội",
+    "issuedDate": "2025-06-20",
+    "effectiveDate": "2025-08-10",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "138989",
-    "title": "Thông tư 22/2019/TT-NHNN",
-    "summary": "Quy định về hạn mức giao dịch của tổ chức tín dụng",
-    "issuedDate": "2019-11-15",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200014",
+    "title": "Nghị định 106/2025/NĐ-CP",
+    "summary": "Quy định về quản lý tài nguyên nước",
+    "issuedDate": "2025-07-01",
+    "effectiveDate": "2025-08-15",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "26135",
-    "title": "Quyết định 1895/1997/QĐ-BYT",
-    "summary": "Ban hành quy chế quản lý thuốc",
-    "issuedDate": "1997-09-25",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200015",
+    "title": "Thông tư 19/2025/TT-BNNPTNT",
+    "summary": "Quy định về phát triển nông nghiệp bền vững",
+    "issuedDate": "2025-06-25",
+    "effectiveDate": "2025-08-20",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "6153",
-    "title": "Luật 16/1999/QH10",
-    "summary": "Luật Giáo dục",
-    "issuedDate": "1999-12-02",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200016",
+    "title": "Quyết định 9012/2025/QĐ-BCT",
+    "summary": "Ban hành kế hoạch phát triển thương mại",
+    "issuedDate": "2025-07-05",
+    "effectiveDate": "2025-08-25",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "95942",
-    "title": "Bộ luật 91/2015/QH13",
-    "summary": "Bộ luật Dân sự",
-    "issuedDate": "2015-11-24",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200017",
+    "title": "Nghị định 107/2025/NĐ-CP",
+    "summary": "Quy định về quản lý khu công nghiệp",
+    "issuedDate": "2025-06-30",
+    "effectiveDate": "2025-08-30",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "67193",
-    "title": "Nghị định 52/2015/NĐ-CP",
-    "summary": "Quy định về quản lý hoạt động xây dựng",
-    "issuedDate": "2015-06-12",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200018",
+    "title": "Thông tư 20/2025/TT-BXD",
+    "summary": "Hướng dẫn quản lý dự án đầu tư xây dựng",
+    "issuedDate": "2025-07-12",
+    "effectiveDate": "2025-08-12",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "44169",
-    "title": "Luật 62/2014/QH13",
-    "summary": "Luật Đầu tư công",
-    "issuedDate": "2014-06-18",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200019",
+    "title": "Luật 77/2025/QH15",
+    "summary": "Luật Giao thông đường bộ",
+    "issuedDate": "2025-06-15",
+    "effectiveDate": "2025-08-18",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "36897",
-    "title": "Thông tư 84/2014/TT-BTC",
-    "summary": "Hướng dẫn thực hiện Luật Thuế thu nhập cá nhân",
-    "issuedDate": "2014-06-30",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200020",
+    "title": "Nghị định 108/2025/NĐ-CP",
+    "summary": "Quy định về quản lý năng lượng tái tạo",
+    "issuedDate": "2025-07-20",
+    "effectiveDate": "2025-08-22",
+    "status": "Đang hiệu lực"
   },
   {
-    "id": "30463",
-    "title": "Thông tư 08/2013/TT-BTTTT",
-    "summary": "Quy định về quản lý thông tin trên internet",
-    "issuedDate": "2013-03-25",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200021",
+    "title": "Nghị định 50/2020/NĐ-CP",
+    "summary": "Quy định về quản lý tài sản công",
+    "issuedDate": "2020-05-15",
+    "effectiveDate": "2020-06-01",
+    "expirationDate": "2025-08-01",
+    "status": "Hết hiệu lực"
   },
   {
-    "id": "40642",
-    "title": "Thông tư 14/2012/TT-BVHTTDL",
-    "summary": "Quy định về quản lý hoạt động văn hóa",
-    "issuedDate": "2012-07-10",
-    "effectiveDate": "Unknown",
-    "status": ""
+    "id": "200022",
+    "title": "Thông tư 10/2020/TT-BTC",
+    "summary": "Hướng dẫn thực hiện Luật Thuế tiêu thụ đặc biệt",
+    "issuedDate": "2020-04-10",
+    "effectiveDate": "2020-05-01",
+    "expirationDate": "2025-08-05",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200023",
+    "title": "Luật 45/2019/QH14",
+    "summary": "Luật Phòng chống tham nhũng",
+    "issuedDate": "2019-11-20",
+    "effectiveDate": "2020-01-01",
+    "expirationDate": "2025-08-10",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200024",
+    "title": "Nghị định 51/2020/NĐ-CP",
+    "summary": "Quy định về quản lý khoáng sản",
+    "issuedDate": "2020-06-10",
+    "effectiveDate": "2020-07-01",
+    "expirationDate": "2025-08-15",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200025",
+    "title": "Thông tư 11/2020/TT-BYT",
+    "summary": "Quy định về quản lý trang thiết bị y tế",
+    "issuedDate": "2020-03-25",
+    "effectiveDate": "2020-04-15",
+    "expirationDate": "2025-08-20",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200026",
+    "title": "Quyết định 3456/2020/QĐ-BNNPTNT",
+    "summary": "Ban hành kế hoạch phát triển lâm nghiệp",
+    "issuedDate": "2020-07-05",
+    "effectiveDate": "2020-08-01",
+    "expirationDate": "2025-08-25",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200027",
+    "title": "Nghị định 52/2020/NĐ-CP",
+    "summary": "Quy định về quản lý xuất khẩu lao động",
+    "issuedDate": "2020-05-20",
+    "effectiveDate": "2020-06-15",
+    "expirationDate": "2025-08-30",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200028",
+    "title": "Thông tư 12/2020/TT-BGDĐT",
+    "summary": "Quy định về giáo dục mầm non",
+    "issuedDate": "2020-06-15",
+    "effectiveDate": "2020-07-10",
+    "expirationDate": "2025-08-12",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200029",
+    "title": "Luật 46/2019/QH14",
+    "summary": "Luật An ninh quốc gia",
+    "issuedDate": "2019-12-10",
+    "effectiveDate": "2020-02-01",
+    "expirationDate": "2025-08-18",
+    "status": "Hết hiệu lực"
+  },
+  {
+    "id": "200030",
+    "title": "Nghị định 53/2020/NĐ-CP",
+    "summary": "Quy định về quản lý giao thông vận tải",
+    "issuedDate": "2020-04-20",
+    "effectiveDate": "2020-05-15",
+    "expirationDate": "2025-08-22",
+    "status": "Hết hiệu lực"
   }
 ]
