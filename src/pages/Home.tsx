@@ -4,7 +4,6 @@ import img5 from "../assets/img/img_5.jpg";
 import img6 from "../assets/img/img_6.jpg";
 import img7 from "../assets/img/img_7.jpg";
 import data from "../mock/DocumentItem.json";
-import Header from "../components/layout/header/Header";
 
 interface NavHeader {
   id: string;
@@ -29,7 +28,7 @@ export const Home = () => {
 
   return (
     <div className="container-home">
-       <Header />
+
       <div className="bg-home">
         <div
           className="slider-wrapper"
