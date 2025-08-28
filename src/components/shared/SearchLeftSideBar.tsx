@@ -21,7 +21,7 @@ const SearchLeftSideBar = () => {
             </span>
           </li>
         </ul>
-         <div className="nav-footer"></div>
+         <div className="nav-footer-content"></div>
       </div>
       {/* section */}
       <div className="box-content">
@@ -65,7 +65,7 @@ const SearchLeftSideBar = () => {
             </span>
           </li>
         </ul>
-        <div className="nav-footer"></div>
+        <div className="nav-footer-content"></div>
       </div>
       {/* section */}
       <div className="box-content">
@@ -129,7 +129,7 @@ const SearchLeftSideBar = () => {
             </span>
           </li>
         </ul>
-        <div className="nav-footer"></div>
+        <div className="nav-footer-content"></div>
       </div>
 
       {/* section */}
@@ -179,7 +179,7 @@ const SearchLeftSideBar = () => {
             </span>
           </li>
         </ul>
-        <div className="nav-footer"></div>
+        <div className="nav-footer-content"></div>
       </div>
     </>
   );
